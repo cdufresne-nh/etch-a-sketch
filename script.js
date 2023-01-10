@@ -6,8 +6,12 @@ for (let i = 0; i <=255; i++) {
     container.appendChild(newDiv)
     newDiv.addEventListener('mouseover', () => {
     newDiv.style.backgroundColor = "black"
-    }); 
+    })
 }
+
+
+
+
 
 
 
