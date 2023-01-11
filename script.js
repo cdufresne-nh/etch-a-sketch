@@ -1,7 +1,29 @@
 /* script.js */
 const container = document.querySelector('#divcontainer');
 const button = document.querySelector("#gridButton");
-let gridSize = 0;
+let gridSize = 256;
+
+if (gridSize == 0) {
+    gridSizePopup();
+} else {
+    newGrid(gridSize);
+}
+
+function createGrid() {
+    const newDiv = document.createElement('cell');
+    container.appendChild(newDiv);
+    newDiv.addEventListener('mouseover', () => {
+    newDiv.style.backgroundColor = "black";
+     })
+    return newDiv;
+}
+
+function newGrid(gridSize) {
+    for (let i = 0; i < gridSize; i++) {
+        createGrid();
+    }
+}
+
 
 function gridSizePopup() {
 	let gridLengthStr = prompt("Enter the number how long you want your grid","");
@@ -10,13 +32,8 @@ function gridSizePopup() {
 	return(gridSize);
 }
 
-for (let i = 0; i < gridSize; i++) {
-    const newDiv = document.createElement('cell');
-    container.appendChild(newDiv)
-    newDiv.addEventListener('mouseover', () => {
-    newDiv.style.backgroundColor = "black";
-     })
-}
+
+
 
 
 
