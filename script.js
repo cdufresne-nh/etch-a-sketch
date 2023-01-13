@@ -1,6 +1,7 @@
 /* script.js */
 const container = document.querySelector('#divcontainer');
 const button = document.querySelector("#gridButton");
+
 let gridSize = 256;
 
 if (gridSize == 0) {
@@ -16,6 +17,10 @@ function createGrid() {
     newDiv.style.backgroundColor = "black";
      })
     return newDiv;
+}
+
+function deleteGrid() {
+    container.remove(container);
 }
 
 function newGrid(gridSize) {
