@@ -1,14 +1,14 @@
 /* script.js */
-const container = document.getElementById('container');
+const container = document.getElementById("container");
 const button = document.querySelector("#gridButton");
 
 function makeRows(rows, cols) {
-    container.style.setProperty('--grid-rows', rows);
-    container.style.setProperty('--grid-cols', cols);
+    container.style.setProperty("--grid-rows", rows);
+    container.style.setProperty("--grid-cols", cols);
     for ( i = 0; i < (rows * cols); i++) {
         let cell = document.createElement("div");
         container.appendChild(cell).className = "grid-item";
-        cell.addEventListener('mouseover', () => {
+        cell.addEventListener("mouseover", () => {
             cell.style.backgroundColor = "black";
              })
     };
@@ -21,16 +21,23 @@ function resetGrid() {
     allTiles.forEach((element) => element.style.backgroundColor = "white");
 }
 
-function deleteGrid() {
-    container.removeChild.classname = "grid-item";
-}
+
 
 function gridSizePopup() {
-    deleteGrid();
-    resetGrid();
-	let gridLengthStr = prompt("Enter the number of how long you want your grid to be","");
+    container.replaceChildren();
+	let gridLengthStr = prompt("How many columns do you want your sketch to be?","");
 	let gridLength = Number(gridLengthStr);
-	let gridSize = gridLength**2;
-    makeRows(gridLength, gridLength);
-	
+	if (gridLength < 1) {
+        alert("Sketch is too small, pick a larger number");
+        gridSizePopup();
+    } else if (gridLength > 100) {
+        alert("Sketch is too big, pick a smaller number");
+        gridSizePopup();
+    } else {
+        makeRows(gridLength, gridLength);
+    }
 } 
+
+    
+	
+
