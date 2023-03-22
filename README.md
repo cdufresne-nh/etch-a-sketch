@@ -1,1 +1,1 @@
-An etch a sketch with 16x16 squares.
+An etch a sketch with variable squares squares.
