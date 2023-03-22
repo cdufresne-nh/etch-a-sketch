@@ -1,5 +1,5 @@
 /* script.js */
-const container = document.querySelector('#divcontainer');
+const container = document.getElementById('divcontainer');
 const button = document.querySelector("#gridButton");
 
 let gridSize = 256;
@@ -36,14 +36,3 @@ function gridSizePopup() {
 	let gridSize = gridLength**2
 	return(gridSize);
 }
-
-
-
-
-
-
-
-
-
-
-
