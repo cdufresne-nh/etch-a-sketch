@@ -1,1 +1,1 @@
-An etch a sketch with variable squares squares.
+An etch a sketch with variable squares.
